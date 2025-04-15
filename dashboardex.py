@@ -4,7 +4,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 from PIL import Image
 
-logo ="Windrush logo clipped1_redrawn BLUEE_v2 3.jpg"
+logo ="Windrush logo clipped1_redrawn BLUEE_v2 3.png"
 logo_path = Image.open(logo) 
 # Title
 #st.title("Windrush Heritage Quiz")
@@ -12,14 +12,14 @@ col1,col2,col3 =st.columns(3)
 with col2:
     st.write(logo_path)
 st.markdown(
-    "<h2 style='color: blue; text-align: center;'>Windrush Foundation 30</h1>",
+    "<h2 style='color: blue; text-align: center;'>My Evaluation Form</h1>",
     unsafe_allow_html=True
 )
 
 #st.title("Windrush Foundation 30")
 st.subheader("**.**")
 st.markdown(
-    "<p style='color: blue; font-size: 20px;'>Evaluation Dashboard</p>",
+    "<p style='color: blue; font-size: 20px;'>Evaluation Form</p>",
     unsafe_allow_html=True)
 
 # Current date
@@ -56,10 +56,15 @@ with st.form("questionnaire"):
 
 file = r"C:\Users\Michael\Downloads\data.csv"
 
-col1,col2,col3=st.columns([1,1,1])
-# Show charts if the button is clicked
+
 if st.button("Show Charts"):
+    col1,col2,col3 = st.columns([1,3,1])
+    with col2:
+        st.subheader("Evaluation Chart Dashboard")
+        st.header(" ")
     try:
+        col1,col2,col3=st.columns([1,1,1])
+        # Show charts if the button is clicked
         df = pd.read_csv(file)
 
         # Chart 1: Age Distribution Histogram
